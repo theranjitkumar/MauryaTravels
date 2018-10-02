@@ -12,32 +12,32 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan("com.rk")
+@ComponentScan("maurya.travels.app")
 @EnableWebMvc
 public class AppConfig {
-	
+
 	@Bean
-    public ViewResolver getViewResolver(){
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("webapp/");
-        resolver.setSuffix(".jsp");
-        return resolver;
-    }
-	
-    @Bean
-    public DriverManagerDataSource dataSource() {    	
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/springDb?autoReconnect=true&useSSL=false");
-        dataSource.setUsername("root");
-        dataSource.setPassword("root12");
-        return dataSource;
-    }
- 
-    @Bean
-    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        jdbcTemplate.setResultsMapCaseInsensitive(true);
-        return jdbcTemplate;
-    }
+	public ViewResolver getViewResolver() {
+		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+		resolver.setPrefix("view/");
+		resolver.setSuffix(".jsp");
+		return resolver;
+	}
+
+	@Bean
+	public DriverManagerDataSource dataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/springDb?autoReconnect=true&useSSL=false");
+		dataSource.setUsername("root");
+		dataSource.setPassword("root12");
+		return dataSource;
+	}
+
+	@Bean
+	public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		jdbcTemplate.setResultsMapCaseInsensitive(true);
+		return jdbcTemplate;
+	}
 }

@@ -10,19 +10,19 @@ public class BlogImpl implements Iblog {
 	@Override
 	public void addBlog(Blog blog) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void updateBlog(Blog blog) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void deleteBlog(int id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
